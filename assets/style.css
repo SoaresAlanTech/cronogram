@@ -12,3 +12,11 @@
     --white-mode: #f8f8fc;
     --border-button: #242424;
 }
+body {
+    background: var(--dark-mode-bg);
+}
+.app {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
