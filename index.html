@@ -10,27 +10,26 @@
     <title>Focus-Timer</title>
 </head>
 <body>
-    <button id="toggle-mode">
-    <span>Turn On/Turn Off</span>
-    </button>
     <div class="app">
-        <section id="timer">
+        <button id="toggle-mode">
+        <span>Turn On/Turn Off</span>
+        <i class="ph-bold ph-sun"></i>
+        <i class="ph-bold ph-moon"></i>
+        </button>
+        <section id="timer" class="flex">
             <span id="minuts"> 00</span>
             <span>:</span>
             <span id="seconds">00</span>
         </section>
-
-        <section id="controls">
-            <button>Play</button>
-            <button>Pause</button>
-            <button>Set</button>
-            <button>Stop</button>
-            <button>MusicOn</button>
-            <button>MusicOff</button>
+        <section id="controls" class="flex">
+            <button class="ph ph-play-circle"></button>
+            <button class="ph ph-pause-circle"></button>
+            <button class="ph ph-timer"></button>
+            <button class="ph ph-stop-circle"></button>
+            <button class="ph ph-speaker-none"></button>
+            <button class="ph ph-speaker-high"></button>
         </section>
     </div>
-
-
 <script src="./assets/index.js"></script>
 </body>
 </html>

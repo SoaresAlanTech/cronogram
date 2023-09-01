@@ -8,15 +8,22 @@
 
 :root {
     font-size: 62.5%;
-    --dark-mode-bg: #121214;
-    --white-mode: #f8f8fc;
-    --border-button: #242424;
+    --dark-mode-bg: hsla(240, 5%, 7%, 1);
+    --white-mode: hsla(240, 40%, 98%, 1);
+    --border-button: hsla(0, 0%, 14%, 1);
+    --controls-color: hsla(194, 100%, 63%, 1);
 }
 body {
     background: var(--dark-mode-bg);
-}
-.app {
+    color: var(--white-mode);
     display: grid;
     place-items: center;
     height: 100vh;
+}
+.ap {
+    display: grid;
+    justify-items: center;
+}
+.flex {
+    display: flex;
 }
