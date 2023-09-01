@@ -7,23 +7,87 @@
 }
 
 :root {
-    font-size: 62.5%;
-    --dark-mode-bg: hsla(240, 5%, 7%, 1);
-    --white-mode: hsla(240, 40%, 98%, 1);
-    --border-button: hsla(0, 0%, 14%, 1);
-    --controls-color: hsla(194, 100%, 63%, 1);
+    --hue: 194;
+    --mode-bg: hsl(var(--hue), 5%, 7%, 1);
+    --text-color: hsl(var(--hue), 40%, 98%, 1);
+    --border-button: hsl(var(--hue), 0%, 14%, 1);
+    --controls-color: hsl(var(--hue), 100%, 63%, 1);
+    --button-secondary: hsl(var(--hue), 40%, 98%, 1); 
+
+    font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+html.light {
+    --hue: 194;
+    --text-color: hsl(var(--hue), 5%, 7%, 1);
+    --mode-bg: hsl(var(--hue), 40%, 98%, 1);
+    --border-button: hsl(var(--hue), 0%, 14%, 1);
+    --controls-color: hsl(var(--hue), 100%, 63%, 1);
+}
+/*Alteration of buttons modes*/
+html.light .ph-sun,
+html:not(.light) .ph-moon{
+    display: none;
+}
+/*add function for toggle-mode*/
+#toggle-mode {
+    position: absolute;
+    right: 3.2rem;
+    top: 3.2rem;
+    font-size: 3.2rem;
+    line-height: 0;
+
+    color: var(--text-color);
 }
 body {
-    background: var(--dark-mode-bg);
-    color: var(--white-mode);
+    background: var(--mode-bg);
+    color: var(--text-color);
     display: grid;
     place-items: center;
     height: 100vh;
 }
-.ap {
+#app {
     display: grid;
     justify-items: center;
+    
 }
 .flex {
     display: flex;
+}
+#timer {
+    font-size: 9.6rem;
+    font-weight: bold;
+    font-family: roboto;
+}
+#controls {
+    margin-top: 1.6rem;
+    padding: 2.2rem 4rem;
+
+    background: var(--border-button);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+    border-radius: 9rem;
+}
+button {
+    background: transparent;
+    border: 0;
+    color: var(--controls-color);
+
+    cursor:pointer;
+    font-size: 6.4rem;
+}
+.secondary {
+    color: var(--button-secondary);
+}
+
+/* controls */
+
+.running .ph-play-circle,
+.running .ph-timer,
+.music-on .ph-speaker-none,
+html:not(.running) .ph-pause-circle,
+html:not(.running) .ph-stop-circle,
+html:not(.music-on) .ph-speaker-high {
+    display: none;
 }
