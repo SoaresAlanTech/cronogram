@@ -9,5 +9,4 @@ buttonToggle.addEventListener('click', (event)=>{
     event.currentTarget.querySelector('span').textContent = `${mode} mode on` 
 
     darkMode = !darkMode
-
 })
