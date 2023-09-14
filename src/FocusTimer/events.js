@@ -3,8 +3,9 @@ import * as actions from "./actions.js"
 export function registerControls() {
     control.addEventListener('click', (event) => {
         const action = event.target.dataset.action
-        if (action == undefined) {
+        if (typeof actions[action] != 'function') {
             return
         }
+        actions[action]()
     })
 }
