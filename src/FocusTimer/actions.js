@@ -1,6 +1,10 @@
-import state from './state.js'
-export function toggleRunning(){
+import state from "./state.js"
+import * as timer from "./timer.js" 
+
+
+export function toggleRunning() {
    document.documentElement.classList.toggle('running')
+    timer.countDown()
 }
 export function reset() {
     state.isRunning = false
